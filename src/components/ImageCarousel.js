@@ -32,8 +32,8 @@ const ImageCarousel = () => {
   ];
 
   return (
-    <section className="py-16 max-w-6xl mx-auto px-4">
-      <h2 className="text-3xl font-semibold mb-8 text-center text-gray-800">Property Gallery</h2>
+    <section className="py-8 md:py-12 max-w-6xl mx-auto px-4">
+      <h2 className="text-2xl md:text-3xl font-semibold mb-4 md:mb-6 text-center text-gray-800">Property Gallery</h2>
       <div className="shadow-xl overflow-hidden">
         <Carousel 
           showArrows={true}
@@ -49,7 +49,7 @@ const ImageCarousel = () => {
           className="rounded-xl"
         >
           {images.map((image, index) => (
-            <div key={index} className="h-[500px]">
+            <div key={index} className="h-[300px] md:h-[400px] lg:h-[500px]">
               <img 
                 src={image} 
                 alt={imageDescriptions[index]} 

@@ -24,7 +24,7 @@ const Hero = () => {
   }, [heroImages.length]);
 
   return (
-    <div className="relative h-screen overflow-hidden">
+    <div className="relative h-[80vh] md:h-screen overflow-hidden">
       {/* Hero image slideshow */}
       {heroImages.map((image, index) => (
         <div 
@@ -42,9 +42,9 @@ const Hero = () => {
       ))}
       
       <div className="relative z-10 flex flex-col items-center justify-center h-full text-white px-4 text-center">
-        <div className="bg-black bg-opacity-30 p-8 backdrop-blur-sm max-w-4xl border-l-4 border-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4 uppercase tracking-wider">Modern 5BR Luxury Pool Home</h1>
-          <p className="text-xl md:text-2xl mb-8 font-light">Just minutes from the magic</p>
+        <div className="bg-black bg-opacity-30 p-4 md:p-8 backdrop-blur-sm max-w-4xl border-l-4 border-white">
+          <h1 className="text-3xl md:text-6xl font-bold mb-2 md:mb-4 uppercase tracking-wider">Modern 5BR Luxury Pool Home</h1>
+          <p className="text-lg md:text-2xl mb-4 md:mb-8 font-light">Just minutes from the magic</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a 
               href="https://www.airbnb.com/rooms/1363941275894637395" 

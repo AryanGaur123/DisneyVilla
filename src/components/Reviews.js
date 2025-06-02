@@ -24,12 +24,12 @@ const Reviews = () => {
   ];
 
   return (
-    <section className="py-16 bg-gray-50">
+    <section className="py-8 md:py-12 bg-gray-50">
       <div className="max-w-6xl mx-auto px-4">
-        <h2 className="text-3xl font-semibold mb-10 text-center text-gray-800">Guest Reviews</h2>
-        <div className="grid md:grid-cols-3 gap-8">
+        <h2 className="text-2xl md:text-3xl font-semibold mb-4 md:mb-8 text-center text-gray-800">Guest Reviews</h2>
+        <div className="grid md:grid-cols-3 gap-4 md:gap-6">
           {reviews.map((review, index) => (
-            <div key={index} className="bg-white p-6 rounded-xl shadow-md">
+            <div key={index} className="bg-white p-4 md:p-6 shadow-md">
               <div className="flex items-center mb-4">
                 <div className="flex text-amber-400 mr-2">
                   {[...Array(5)].map((_, i) => (
@@ -38,7 +38,7 @@ const Reviews = () => {
                 </div>
                 <span className="text-gray-600 text-sm">{review.date}</span>
               </div>
-              <p className="text-gray-700 mb-4 italic">"{review.comment}"</p>
+              <p className="text-gray-700 mb-3 italic text-sm md:text-base">"{review.comment}"</p>
               <p className="font-medium text-gray-800">- {review.name}</p>
             </div>
           ))}

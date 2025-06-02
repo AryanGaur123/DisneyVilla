@@ -16,27 +16,27 @@ function App() {
     <div className="App min-h-screen">
       <Navbar />
       <main>
-        <section id="hero">
+        <section id="hero" className="mb-0">
           <Hero />
         </section>
         
-        <section id="description">
+        <section id="description" className="mb-0">
           <Description />
         </section>
         
-        <section id="amenities">
+        <section id="amenities" className="mb-0">
           <Amenities />
         </section>
         
-        <section id="gallery">
+        <section id="gallery" className="mb-0">
           <ImageCarousel />
         </section>
         
-        <section id="reviews">
+        <section id="reviews" className="mb-0">
           <Reviews />
         </section>
         
-        <section id="cta">
+        <section id="cta" className="mb-0">
           <CallToAction />
         </section>
       </main>
