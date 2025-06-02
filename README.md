@@ -1,70 +1,101 @@
-# Getting Started with Create React App
+# Luxury Airbnb Landing Page
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, minimalist landing page built with React and Tailwind CSS for showcasing a luxury 5-bedroom, 4.5-bath Airbnb property near Disney World.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- **Responsive Design**: Optimized for both desktop and mobile devices
+- **Modern UI**: Clean, minimalist design with sharp edges and sophisticated styling
+- **Interactive Elements**: Image carousel, smooth scrolling navigation
+- **Google Maps Integration**: Interactive map with accurate distances to attractions
+- **Sections Include**:
+  - Hero section with full-width property image
+  - Detailed property description
+  - Premium amenities with icons
+  - Photo gallery
+  - Guest reviews
+  - Location information with accurate distances to attractions
+  - Call-to-action booking section
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- React.js
+- Tailwind CSS for styling
+- React Icons for icon components
+- React Responsive Carousel for image gallery
+- Google Maps API for interactive maps and distance calculations
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Getting Started
 
-### `npm test`
+### Prerequisites
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Node.js (v14 or later)
+- npm or yarn
+- Google Maps API key
 
-### `npm run build`
+### Installation
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. Clone the repository
+   ```
+   git clone <repository-url>
+   cd luxury-airbnb
+   ```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+2. Install dependencies
+   ```
+   npm install
+   ```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Set up your Google Maps API key
+   - Get a Google Maps API key from the [Google Cloud Console](https://console.cloud.google.com/)
+   - Enable the following APIs in your Google Cloud Console:
+     - Maps JavaScript API
+     - Places API
+     - Geocoding API
+     - Distance Matrix API
+   - Create a `.env` file in the root directory of the project
+   - Add your API key to the `.env` file:
+     ```
+     REACT_APP_GOOGLE_MAPS_API_KEY=your_api_key_here
+     ```
 
-### `npm run eject`
+4. Start the development server
+   ```
+   npm start
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+5. Open [http://localhost:3000](http://localhost:3000) to view it in your browser
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Customization
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- **Images**: 
+  - Place your hero image at `/public/images/hero.jpg`
+  - Add carousel images as `/public/images/image1.png` through `/public/images/image10.png`
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+- **Property Details**:
+  - Update property details in the `Description.js` component
+  - Modify amenities in the `Amenities.js` component
+  - Update booking links and contact information
 
-## Learn More
+- **Location**:
+  - The property address is set to "16049 Blue Wave Way, Clermont, FL"
+  - Distances to attractions are accurately calculated based on this address
+  - You can update the address in the `Map.js` component if needed
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Deployment
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To build the app for production:
 
-### Code Splitting
+```
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+This creates an optimized production build in the `build` folder that can be deployed to any static hosting service.
 
-### Analyzing the Bundle Size
+**Important**: When deploying to production, make sure to:
+1. Set up environment variables for your Google Maps API key on your hosting platform
+2. Restrict your Google Maps API key to only your website's domain for security
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## License
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is available for private use.
