@@ -5,22 +5,22 @@
 @tailwind utilities;
 
 /* ─────────────────────────────────────────────────
-   Disney-inspired palette
-   Primary:  Midnight Blue   #1A1F6B  (Cinderella castle)
-   Accent:   Magic Gold      #F9C03A  (star / wand)
-   Pop:      Pixie Purple    #7B3FBE  (fairy godmother)
-   Bright:   Enchanted Teal  #00B4D8  (Genie / Ariel)
-   Warm:     Sunset Coral    #FF5F6D  (Mickey red / energy)
-   BG:       Fairy Cream     #FFF9F0
+   Disney Color System
+   Deep Blue    #1565C0  — Cinderella castle walls
+   Royal Blue   #1E88E5  — Mickey sorcerer robe
+   Sky Blue     #42A5F5  — park sky / Genie
+   Ice Blue     #E3F2FD  — light tint backgrounds
+   Gold         #F9C03A  — magic wand / stars
+   White        #FFFFFF
+   BG           #F0F7FF  — pale sky background
 ───────────────────────────────────────────────── */
 :root {
-  --disney-blue:   #1A1F6B;
-  --disney-gold:   #F9C03A;
-  --disney-purple: #7B3FBE;
-  --disney-teal:   #00B4D8;
-  --disney-coral:  #FF5F6D;
-  --fairy-cream:   #FFF9F0;
-  --soft-white:    #FFFFFF;
+  --deep-blue:  #1565C0;
+  --royal-blue: #1E88E5;
+  --sky-blue:   #42A5F5;
+  --ice-blue:   #E3F2FD;
+  --disney-gold: #F9C03A;
+  --bg:         #F0F7FF;
 }
 
 html { scroll-behavior: smooth; }
@@ -29,8 +29,8 @@ body {
   margin: 0;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-color: var(--fairy-cream);
-  color: #111827;
+  background-color: #F0F7FF;
+  color: #0D1B3E;
 }
 
 section { scroll-margin-top: 72px; }
@@ -39,16 +39,18 @@ section { scroll-margin-top: 72px; }
 
 /* ── Gradient helpers ───────────────────────────── */
 .gradient-disney {
-  background: linear-gradient(135deg, #F9C03A 0%, #FF5F6D 50%, #7B3FBE 100%);
+  background: linear-gradient(135deg, #1E88E5 0%, #42A5F5 50%, #F9C03A 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
+/* Primary CTA: deep blue → royal blue */
 .gradient-btn {
-  background: linear-gradient(135deg, #FF5F6D 0%, #7B3FBE 100%);
+  background: linear-gradient(135deg, #1565C0 0%, #1E88E5 100%);
 }
+/* Gold CTA: gold → sky blue */
 .gradient-btn-gold {
-  background: linear-gradient(135deg, #F9C03A 0%, #FF5F6D 100%);
+  background: linear-gradient(135deg, #F9C03A 0%, #42A5F5 100%);
 }
 
 /* ── Section label ──────────────────────────────── */
@@ -58,7 +60,7 @@ section { scroll-margin-top: 72px; }
   font-weight: 800;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: var(--disney-purple);
+  color: #1E88E5;
   margin-bottom: 8px;
 }
 
@@ -83,13 +85,13 @@ section { scroll-margin-top: 72px; }
 .photo-grid-item:hover img { transform: scale(1.05); filter: brightness(0.78); }
 .photo-grid-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(26,31,107,0.55) 0%, transparent 55%);
+  background: linear-gradient(to top, rgba(21,101,192,0.6) 0%, transparent 55%);
   opacity: 0; transition: opacity 0.3s ease;
   display: flex; align-items: flex-end; padding: 10px 12px;
 }
 .photo-grid-item:hover .photo-grid-overlay { opacity: 1; }
 
-/* ── "See more" fade mask ───────────────────────── */
+/* ── Gallery fade mask ──────────────────────────── */
 .gallery-mask {
   position: relative;
 }
@@ -98,14 +100,14 @@ section { scroll-margin-top: 72px; }
   position: absolute;
   bottom: 0; left: 0; right: 0;
   height: 160px;
-  background: linear-gradient(to bottom, transparent, var(--fairy-cream));
+  background: linear-gradient(to bottom, transparent, #F0F7FF);
   pointer-events: none;
 }
 
 /* ── Lightbox ───────────────────────────────────── */
 .lightbox-bg {
   position: fixed; inset: 0;
-  background: rgba(8, 8, 24, 0.96);
+  background: rgba(5, 12, 36, 0.96);
   z-index: 9999;
   display: flex; align-items: center; justify-content: center;
 }
@@ -117,13 +119,14 @@ section { scroll-margin-top: 72px; }
   box-shadow: 0 40px 100px rgba(0,0,0,0.7);
 }
 .lb-btn {
-  position: absolute; background: rgba(255,255,255,0.08);
+  position: absolute;
+  background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.12);
   color: white; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
   border-radius: 50%; transition: background 0.2s, transform 0.15s;
 }
-.lb-btn:hover { background: rgba(249,192,58,0.25); transform: scale(1.1); }
+.lb-btn:hover { background: rgba(66,165,245,0.3); transform: scale(1.1); }
 .lb-close { top: 18px; right: 18px; width: 38px; height: 38px; font-size: 1.1rem; }
 .lb-prev  { left: 14px; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; font-size: 1.6rem; }
 .lb-next  { right: 14px; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; font-size: 1.6rem; }
@@ -135,15 +138,15 @@ section { scroll-margin-top: 72px; }
 }
 .card-lift:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 32px rgba(26,31,107,0.1);
+  box-shadow: 0 12px 32px rgba(21,101,192,0.1);
 }
 
 /* ── Sparkle divider ────────────────────────────── */
 .sparkle-divider {
   text-align: center;
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   letter-spacing: 0.6em;
-  opacity: 0.3;
+  opacity: 0.25;
   margin: 0;
   user-select: none;
 }

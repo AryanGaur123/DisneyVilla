@@ -30,7 +30,7 @@ const Hero = () => {
 
       {/* Overlay — deep navy/purple vignette matching Disney palette */}
       <div className="absolute inset-0 z-10" style={{
-        background: 'linear-gradient(170deg, rgba(26,31,107,0.62) 0%, rgba(26,31,107,0.25) 45%, rgba(10,8,30,0.78) 100%)'
+        background: 'linear-gradient(170deg, rgba(21,101,192,0.62) 0%, rgba(21,101,192,0.25) 45%, rgba(5,12,36,0.78) 100%)'
       }} />
 
       {/* Content */}
@@ -42,7 +42,7 @@ const Hero = () => {
         </div>
 
         <h1 className="font-display font-bold text-white text-5xl md:text-7xl leading-[1.05] mb-4 max-w-4xl"
-            style={{ textShadow: '0 4px 30px rgba(10,8,30,0.5)' }}>
+            style={{ textShadow: '0 4px 30px rgba(5,12,36,0.5)' }}>
           Your Magical<br />
           <span className="gradient-disney">Disney Escape</span><br />
           Awaits

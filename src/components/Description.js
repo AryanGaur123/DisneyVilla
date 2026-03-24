@@ -1,10 +1,10 @@
 import React from 'react';
 
 const stats = [
-  { val: '5',    sub: 'Bedrooms',      accent: '#FF5F6D', bg: '#FFF0F0' },
-  { val: '4.5',  sub: 'Bathrooms',     accent: '#7B3FBE', bg: '#F5F0FF' },
-  { val: '12',   sub: 'Guests',        accent: '#00B4D8', bg: '#F0FAFF' },
-  { val: '5.0★', sub: 'Airbnb Rating', accent: '#F9C03A', bg: '#FFFBE0' },
+  { val: '5',    sub: 'Beds',    accent: '#1565C0' },
+  { val: '4.5',  sub: 'Baths',   accent: '#1E88E5' },
+  { val: '12',   sub: 'Guests',  accent: '#42A5F5' },
+  { val: '5.0★', sub: 'Rating',  accent: '#F9C03A' },
 ];
 
 const nearby = [
@@ -15,18 +15,20 @@ const nearby = [
 ];
 
 const Description = () => (
-  <section className="py-16 px-5" style={{ background: '#FFF9F0' }}>
+  <section className="py-16 px-5" style={{ background: '#F0F7FF' }}>
     <div className="max-w-5xl mx-auto">
 
       {/* Sparkle divider */}
       <p className="sparkle-divider mb-10">✦ ✦ ✦</p>
 
-      {/* Stat row */}
-      <div className="grid grid-cols-2 md:grid-cols-4 gap-3 mb-12">
+      {/* Stat row — compact inline chips */}
+      <div className="flex flex-wrap justify-center gap-3 mb-10">
         {stats.map(s => (
-          <div key={s.sub} className="card-lift rounded-2xl p-5 text-center" style={{ background: s.bg }}>
-            <div className="font-display font-bold text-3xl mb-1" style={{ color: s.accent }}>{s.val}</div>
-            <div className="text-xs font-bold uppercase tracking-widest" style={{ color: '#9CA3AF' }}>{s.sub}</div>
+          <div key={s.sub}
+               className="inline-flex items-center gap-2 px-4 py-2 rounded-full"
+               style={{ background: s.accent + '14', border: `1.5px solid ${s.accent}30` }}>
+            <span className="font-display font-bold text-base leading-none" style={{ color: s.accent }}>{s.val}</span>
+            <span className="text-xs font-bold uppercase tracking-wider" style={{ color: s.accent + 'CC' }}>{s.sub}</span>
           </div>
         ))}
       </div>
@@ -51,7 +53,7 @@ const Description = () => (
 
         {/* Nearby table */}
         <div className="rounded-2xl overflow-hidden card-lift" style={{ border: '1.5px solid rgba(26,31,107,0.08)' }}>
-          <div className="px-5 py-3.5" style={{ background: '#1A1F6B' }}>
+          <div className="px-5 py-3.5" style={{ background: '#1565C0' }}>
             <span className="text-xs font-bold uppercase tracking-widest" style={{ color: '#F9C03A' }}>
               ✦ Nearby Attractions
             </span>
@@ -60,7 +62,7 @@ const Description = () => (
             <div key={a.name}
                  className="flex items-center justify-between px-5 py-3.5"
                  style={{
-                   background: i % 2 === 0 ? '#FFF9F0' : 'white',
+                   background: i % 2 === 0 ? '#F0F7FF' : 'white',
                    borderBottom: i < nearby.length - 1 ? '1px solid rgba(26,31,107,0.05)' : 'none'
                  }}>
               <div className="flex items-center gap-3">
@@ -68,7 +70,7 @@ const Description = () => (
                 <span className="font-semibold text-sm" style={{ color: '#111827' }}>{a.name}</span>
               </div>
               <div className="text-right">
-                <div className="text-xs font-bold" style={{ color: '#FF5F6D' }}>{a.dist}</div>
+                <div className="text-xs font-bold" style={{ color: '#1E88E5' }}>{a.dist}</div>
                 <div className="text-xs" style={{ color: '#9CA3AF' }}>{a.time}</div>
               </div>
             </div>

@@ -31,11 +31,11 @@ const Navbar = () => {
         {/* Logo */}
         <a href="#hero" className="flex items-center gap-2.5 no-underline">
           <div className="w-9 h-9 rounded-xl flex items-center justify-center text-lg flex-shrink-0"
-               style={{ background: 'linear-gradient(135deg, #1A1F6B, #7B3FBE)' }}>
+               style={{ background: 'linear-gradient(135deg, #1565C0, #1E88E5)' }}>
             🏰
           </div>
           <div className="leading-tight">
-            <div className="font-display font-bold text-sm" style={{ color: '#1A1F6B' }}>Luxury Disney Villa</div>
+            <div className="font-display font-bold text-sm" style={{ color: '#1565C0' }}>Luxury Disney Villa</div>
             <div className="text-xs font-medium" style={{ color: '#9CA3AF' }}>Clermont · FL</div>
           </div>
         </a>
@@ -45,9 +45,9 @@ const Navbar = () => {
           {links.map(l => (
             <a key={l.href} href={l.href}
                className="text-sm font-semibold transition-colors duration-150"
-               style={{ color: '#4B5563' }}
-               onMouseEnter={e => e.target.style.color = '#1A1F6B'}
-               onMouseLeave={e => e.target.style.color = '#4B5563'}>
+               style={{ color: '#3B5B87' }}
+               onMouseEnter={e => e.target.style.color = '#1565C0'}
+               onMouseLeave={e => e.target.style.color = '#3B5B87'}>
               {l.label}
             </a>
           ))}
@@ -61,7 +61,7 @@ const Navbar = () => {
         </a>
 
         {/* Mobile toggle */}
-        <button className="md:hidden p-1.5 rounded-lg" style={{ color: '#1A1F6B' }}
+        <button className="md:hidden p-1.5 rounded-lg" style={{ color: '#1565C0' }}
                 onClick={() => setOpen(!open)} aria-label="Menu">
           {open ? <FaTimes size={20} /> : <FaBars size={20} />}
         </button>
@@ -73,7 +73,7 @@ const Navbar = () => {
           {links.map(l => (
             <a key={l.href} href={l.href}
                className="block py-2.5 text-sm font-semibold"
-               style={{ color: '#4B5563' }}
+               style={{ color: '#3B5B87' }}
                onClick={() => setOpen(false)}>
               {l.label}
             </a>

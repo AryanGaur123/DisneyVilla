@@ -2,7 +2,7 @@ import React from 'react';
 import { FaInstagram, FaFacebook, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa';
 
 const Footer = () => (
-  <footer style={{ background: '#0C1154' }} className="pt-14 pb-6 px-5">
+  <footer style={{ background: '#0D1F3C' }} className="pt-14 pb-6 px-5">
     <div className="max-w-5xl mx-auto">
       <div className="grid md:grid-cols-3 gap-10 pb-10"
            style={{ borderBottom: '1px solid rgba(255,255,255,0.07)' }}>
@@ -11,10 +11,10 @@ const Footer = () => (
         <div>
           <div className="flex items-center gap-2.5 mb-4">
             <div className="w-9 h-9 rounded-xl flex items-center justify-center text-base flex-shrink-0"
-                 style={{ background: 'linear-gradient(135deg, #1A1F6B, #7B3FBE)' }}>🏰</div>
+                 style={{ background: 'linear-gradient(135deg, #1565C0, #1E88E5)' }}>🏰</div>
             <div>
               <div className="font-display font-bold text-sm text-white">Luxury Disney Villa</div>
-              <div className="text-xs" style={{ color: '#4B5563' }}>Clermont · Florida</div>
+              <div className="text-xs" style={{ color: '#3B5B87' }}>Clermont · Florida</div>
             </div>
           </div>
           <p className="text-sm font-light leading-relaxed mb-5" style={{ color: 'rgba(255,255,255,0.35)' }}>

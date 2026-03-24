@@ -3,18 +3,18 @@ import { FaSwimmingPool, FaUtensils, FaWifi, FaParking, FaTshirt, FaMapMarkerAlt
 
 const amenities = [
   { icon: FaSwimmingPool, name: 'Private Pool',     color: '#00B4D8', bg: '#F0FAFF' },
-  { icon: FaGamepad,      name: 'Game Room',        color: '#7B3FBE', bg: '#F5F0FF' },
-  { icon: FaUtensils,     name: 'Full Kitchen',     color: '#FF5F6D', bg: '#FFF0F0' },
+  { icon: FaGamepad,      name: 'Game Room',        color: '#1E88E5', bg: '#E3F2FD' },
+  { icon: FaUtensils,     name: 'Full Kitchen',     color: '#1565C0', bg: '#E3F2FD' },
   { icon: FaBed,          name: 'King Beds',        color: '#F9C03A', bg: '#FFFBE0' },
-  { icon: FaWifi,         name: 'High-Speed Wi-Fi', color: '#1A1F6B', bg: '#F0F1FF' },
-  { icon: FaMapMarkerAlt, name: 'Near Disney World',color: '#FF5F6D', bg: '#FFF0F0' },
+  { icon: FaWifi,         name: 'High-Speed Wi-Fi', color: '#1565C0', bg: '#E3F2FD' },
+  { icon: FaMapMarkerAlt, name: 'Near Disney World',color: '#1565C0', bg: '#E3F2FD' },
   // shown after expand
   { icon: FaParking,      name: 'Free Parking',     color: '#10B981', bg: '#F0FDF4' },
   { icon: FaTshirt,       name: 'Washer / Dryer',   color: '#F9C03A', bg: '#FFFBE0' },
   { icon: FaSnowflake,    name: 'A/C & Heating',    color: '#00B4D8', bg: '#F0FAFF' },
-  { icon: FaTv,           name: 'Smart TVs',        color: '#1A1F6B', bg: '#F0F1FF' },
+  { icon: FaTv,           name: 'Smart TVs',        color: '#1565C0', bg: '#E3F2FD' },
   { icon: FaLock,         name: 'Secure Access',    color: '#10B981', bg: '#F0FDF4' },
-  { icon: FaDumbbell,     name: 'Fitness Center',   color: '#7B3FBE', bg: '#F5F0FF' },
+  { icon: FaDumbbell,     name: 'Fitness Center',   color: '#1E88E5', bg: '#E3F2FD' },
 ];
 
 const VISIBLE = 6;
@@ -54,7 +54,7 @@ const Amenities = () => {
           <button
             onClick={() => setExpanded(e => !e)}
             className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-sm font-bold transition-all duration-200 hover:scale-105"
-            style={{ background: '#F5F0FF', color: '#7B3FBE', border: '1.5px solid #7B3FBE22' }}
+            style={{ background: '#E3F2FD', color: '#1E88E5', border: '1.5px solid #1E88E522' }}
           >
             {expanded ? '▲ Show Less' : `✦ Show All ${amenities.length} Amenities`}
           </button>

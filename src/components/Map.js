@@ -6,10 +6,10 @@ const MAPS_SEARCH = 'https://www.google.com/maps/search/?api=1&query=16049+Blue+
 const MAPS_EMBED  = 'https://maps.google.com/maps?q=16049+Blue+Wave+Way,+Clermont,+FL+34714&t=m&z=15&output=embed&iwloc=near';
 
 const distances = [
-  { emoji: '🏰', name: 'Walt Disney World',    dist: '22 mi', time: '~30 min', color: '#FF5F6D' },
+  { emoji: '🏰', name: 'Walt Disney World',    dist: '22 mi', time: '~30 min', color: '#1565C0' },
   { emoji: '🎡', name: 'Universal Studios',    dist: '28 mi', time: '~40 min', color: '#F9C03A' },
-  { emoji: '💧', name: 'Surfari Water Park',   dist: '4.8 mi', time: '~11 min', color: '#00B4D8' },
-  { emoji: '✈️', name: 'Orlando Intl Airport', dist: '30 mi', time: '~40 min', color: '#7B3FBE' },
+  { emoji: '💧', name: 'Surfari Water Park',   dist: '4.8 mi', time: '~11 min', color: '#42A5F5' },
+  { emoji: '✈️', name: 'Orlando Intl Airport', dist: '30 mi', time: '~40 min', color: '#1E88E5' },
 ];
 
 const Map = () => (

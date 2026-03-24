@@ -1,7 +1,7 @@
 import React from 'react';
 
 const CallToAction = () => (
-  <section id="cta" className="py-24 px-5 relative overflow-hidden" style={{ background: '#1A1F6B' }}>
+  <section id="cta" className="py-24 px-5 relative overflow-hidden" style={{ background: '#1565C0' }}>
     {/* Decorative glow blobs */}
     <div className="absolute pointer-events-none" style={{
       top: '-80px', left: '-80px', width: 360, height: 360, borderRadius: '50%',
@@ -9,7 +9,7 @@ const CallToAction = () => (
     }} />
     <div className="absolute pointer-events-none" style={{
       bottom: '-80px', right: '-80px', width: 360, height: 360, borderRadius: '50%',
-      background: 'radial-gradient(circle, rgba(123,63,190,0.2) 0%, transparent 70%)'
+      background: 'radial-gradient(circle, rgba(66,165,245,0.2) 0%, transparent 70%)'
     }} />
     <div className="absolute pointer-events-none" style={{
       top: '40%', left: '50%', transform: 'translate(-50%,-50%)', width: 500, height: 500, borderRadius: '50%',

@@ -3,21 +3,21 @@ import { FaStar } from 'react-icons/fa';
 
 const reviews = [
   {
-    name: 'Sarah M.', date: 'May 2025', avatar: 'SM', color: '#FF5F6D',
+    name: 'Sarah M.', date: 'May 2025', avatar: 'SM', color: '#1565C0',
     comment: "This home exceeded all our expectations! The pool was a hit with the kids, and the proximity to Disney made everything so easy. The themed rooms were beautifully done. We'll definitely be back!",
   },
   {
-    name: 'Michael T.', date: 'April 2025', avatar: 'MT', color: '#7B3FBE',
+    name: 'Michael T.', date: 'April 2025', avatar: 'MT', color: '#1E88E5',
     comment: 'Absolutely stunning property. Everything was immaculate and the amenities were top-notch. Our family of 10 had plenty of space — we loved relaxing by the pool after long days at the parks.',
   },
   {
-    name: 'Jennifer L.', date: 'March 2025', avatar: 'JL', color: '#00B4D8',
+    name: 'Jennifer L.', date: 'March 2025', avatar: 'JL', color: '#42A5F5',
     comment: "We stayed for our family reunion and couldn't have chosen a better place. Fully-equipped kitchen, comfortable beds, perfect location. Host was incredibly responsive throughout.",
   },
 ];
 
 const Reviews = () => (
-  <section id="reviews" className="py-16 px-5" style={{ background: '#FFF9F0' }}>
+  <section id="reviews" className="py-16 px-5" style={{ background: '#F0F7FF' }}>
     <div className="max-w-5xl mx-auto">
 
       <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-10">

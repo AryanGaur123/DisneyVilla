@@ -60,7 +60,7 @@ const Gallery = () => {
   }, [lb]);
 
   return (
-    <section id="gallery" className="py-16 px-5" style={{ background: '#FFF9F0' }}>
+    <section id="gallery" className="py-16 px-5" style={{ background: '#F0F7FF' }}>
       <div className="max-w-6xl mx-auto">
 
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-8">
