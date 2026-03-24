@@ -1,67 +1,64 @@
 import React from 'react';
-import { FaInstagram, FaFacebook, FaEnvelope, FaPhone } from 'react-icons/fa';
+import { FaInstagram, FaFacebook, FaEnvelope } from 'react-icons/fa';
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-800 text-white py-12">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid md:grid-cols-3 gap-8">
+    <footer className="bg-gray-900 text-white pt-12 pb-6 px-4">
+      <div className="max-w-5xl mx-auto">
+        <div className="grid md:grid-cols-3 gap-8 pb-10 border-b border-gray-700">
+          {/* Brand */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Modern 5BR Luxury Pool Home</h3>
-            <p className="text-gray-300 mb-6">
-              Experience luxury living just minutes from Disney World. Our spacious 5-bedroom home offers the perfect blend of comfort and convenience.
+            <div className="flex items-center gap-2 mb-3">
+              <span className="text-2xl">🏰</span>
+              <span className="font-black text-lg text-[#FF6B6B]">Luxury Disney Villa</span>
+            </div>
+            <p className="text-gray-400 font-semibold text-sm leading-relaxed mb-4">
+              A 5-star luxury retreat just 15 minutes from Disney World. Perfect for families, groups, and celebrations.
             </p>
-            <div className="flex space-x-4">
-              <a href="#" className="text-white hover:text-gray-300 transition-colors">
-                <FaInstagram size={24} />
+            <div className="flex gap-3">
+              <a href="#" className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#FF6B6B] transition" aria-label="Instagram">
+                <FaInstagram size={16} />
               </a>
-              <a href="#" className="text-white hover:text-gray-300 transition-colors">
-                <FaFacebook size={24} />
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#4ECDC4] transition" aria-label="Facebook">
+                <FaFacebook size={16} />
+              </a>
+              <a href="mailto:luxurydisneyvilla@gmail.com" className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#FFD93D] hover:text-gray-900 transition" aria-label="Email">
+                <FaEnvelope size={16} />
               </a>
             </div>
           </div>
-          
+
+          {/* Contact */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Contact Us</h3>
-            <div className="space-y-3">
-              <div className="flex items-center">
-                <FaEnvelope className="mr-3 text-gray-400" />
-                <a href="mailto:booking@luxurydisneyhome.com" className="text-gray-300 hover:text-white transition-colors">
-                  booking@luxurydisneyhome.com
+            <h3 className="font-black text-base mb-4 text-white">Contact</h3>
+            <div className="space-y-2 text-gray-400 font-semibold text-sm">
+              <p>
+                <a href="mailto:luxurydisneyvilla@gmail.com" className="hover:text-[#FF6B6B] transition">
+                  luxurydisneyvilla@gmail.com
                 </a>
-              </div>
-              <div className="flex items-center">
-                <FaPhone className="mr-3 text-gray-400" />
-                <a href="tel:+14075551234" className="text-gray-300 hover:text-white transition-colors">
-                  (407) 555-1234
-                </a>
-              </div>
+              </p>
+              <p>16049 Blue Wave Way<br />Clermont, Florida</p>
             </div>
           </div>
-          
+
+          {/* Links */}
           <div>
-            <h3 className="text-xl font-semibold mb-4">Quick Links</h3>
-            <ul className="space-y-2 text-gray-300">
+            <h3 className="font-black text-base mb-4 text-white">Quick Links</h3>
+            <ul className="space-y-2 text-gray-400 font-semibold text-sm">
               <li>
-                <a href="https://www.airbnb.com/rooms/1363941275894637395" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+                <a href="https://www.airbnb.com/rooms/1363941275894637395" target="_blank" rel="noopener noreferrer" className="hover:text-[#4ECDC4] transition">
                   Airbnb Listing
                 </a>
               </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">House Rules</a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">Cancellation Policy</a>
-              </li>
-              <li>
-                <a href="#" className="hover:text-white transition-colors">Local Attractions</a>
-              </li>
+              <li><a href="#amenities" className="hover:text-[#4ECDC4] transition">Amenities</a></li>
+              <li><a href="#gallery" className="hover:text-[#4ECDC4] transition">Gallery</a></li>
+              <li><a href="#reviews" className="hover:text-[#4ECDC4] transition">Reviews</a></li>
             </ul>
           </div>
         </div>
-        
-        <div className="border-t border-gray-700 mt-10 pt-6 text-center text-gray-400">
-          <p>&copy; {new Date().getFullYear()} Modern 5BR Luxury Pool Home. All rights reserved.</p>
+
+        <div className="pt-6 text-center text-gray-500 text-sm font-semibold">
+          © {new Date().getFullYear()} Luxury Disney Villa · All rights reserved.
         </div>
       </div>
     </footer>

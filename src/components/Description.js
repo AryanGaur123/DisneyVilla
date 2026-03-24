@@ -1,39 +1,57 @@
 import React from 'react';
 
+const highlights = [
+  { emoji: '🛏️', label: '5 Bedrooms' },
+  { emoji: '🛁', label: '4.5 Bathrooms' },
+  { emoji: '🏊', label: 'Private Pool' },
+  { emoji: '👨‍👩‍👧‍👦', label: 'Sleeps 12' },
+  { emoji: '🏰', label: '15 min to Disney' },
+  { emoji: '🎡', label: '30 min to Universal' },
+];
+
 const Description = () => {
   return (
-    <section className="py-10 md:py-16 px-4 max-w-6xl mx-auto bg-gray-50">
-      <div className="bg-white border-l-4 border-black shadow-md p-4 md:p-8">
-        <h2 className="text-2xl md:text-3xl font-bold mb-4 md:mb-6 text-gray-900 uppercase tracking-wide">EXPERIENCE LUXURY NEAR THE MAGIC</h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
-          <div className="text-gray-700 space-y-2 md:space-y-4 md:border-r md:border-gray-200 md:pr-6">
-            <p className="font-light text-sm md:text-lg">
-              Welcome to our newly built (March 2025) luxury vacation home located in Clermont, Florida. 
-              Just 15 minutes (9.2 miles) from Disney World, this spacious 5-bedroom, 4.5-bathroom retreat offers the perfect 
-              blend of comfort, style, and convenience for your Orlando getaway.
+    <section className="py-16 px-4 bg-[#FFF8F0]">
+      <div className="max-w-5xl mx-auto">
+        {/* Section header */}
+        <div className="text-center mb-10">
+          <span className="inline-block bg-[#4ECDC4]/15 text-[#4ECDC4] font-bold text-sm px-4 py-1.5 rounded-full mb-3">
+            About the Villa
+          </span>
+          <h2 className="text-3xl md:text-4xl font-black text-gray-900 mb-3">
+            Where Luxury Meets <span className="text-[#FF6B6B]">Magic</span>
+          </h2>
+          <p className="text-gray-500 text-base md:text-lg max-w-2xl mx-auto font-semibold">
+            A brand-new (March 2025) luxury retreat in Clermont, Florida — the perfect home base for your Orlando adventure.
+          </p>
+        </div>
+
+        {/* Two-column description */}
+        <div className="bg-white rounded-3xl p-8 md:p-10 shadow-sm border border-gray-100 mb-8">
+          <div className="grid md:grid-cols-2 gap-6 text-gray-600 font-semibold leading-relaxed">
+            <p>
+              Welcome to our stunning 5-bedroom, 4.5-bathroom vacation home. Located just 9.2 miles (15 minutes) from
+              Disney World, this spacious retreat offers an unmatched blend of comfort, style, and convenience for groups
+              of up to 12 guests.
             </p>
-            <p className="font-light text-sm md:text-lg">
-              Our home features elegantly themed rooms, a private pool, and can comfortably accommodate up to 12 guests. 
-              Whether you're planning a family vacation, a reunion with friends, or a special celebration, our property 
-              provides the perfect setting for creating unforgettable memories.
+            <p>
+              After a magical day at the parks, return to your own private oasis at 16049 Blue Wave Way. Splash in the
+              private pool, gather in the game room, and wake up refreshed — ready for another day of adventure.
             </p>
           </div>
-          <div className="text-gray-700 space-y-2 md:space-y-4 md:pl-6 mt-4 md:mt-0">
-            <p className="font-light text-sm md:text-lg">
-              Enjoy the privacy and space of a home with all the amenities of a luxury resort. After a day of adventure 
-              at the parks, return to your own private oasis at 16049 Blue Wave Way to relax and recharge for tomorrow's magic.
-            </p>
-            <div className="mt-4 md:mt-6 pt-4 md:pt-6 border-t border-gray-200">
-              <ul className="grid grid-cols-2 gap-2 md:gap-4 text-sm md:text-base">
-                <li className="flex items-center"><span className="w-2 h-2 bg-black mr-2"></span>5 Bedrooms</li>
-                <li className="flex items-center"><span className="w-2 h-2 bg-black mr-2"></span>4.5 Bathrooms</li>
-                <li className="flex items-center"><span className="w-2 h-2 bg-black mr-2"></span>Private Pool</li>
-                <li className="flex items-center"><span className="w-2 h-2 bg-black mr-2"></span>Sleeps 12</li>
-                <li className="flex items-center"><span className="w-2 h-2 bg-black mr-2"></span>15 min to Disney</li>
-                <li className="flex items-center"><span className="w-2 h-2 bg-black mr-2"></span>30 min to Universal</li>
-              </ul>
+        </div>
+
+        {/* Highlight chips */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          {highlights.map((h) => (
+            <div
+              key={h.label}
+              className="flex items-center gap-3 bg-white rounded-2xl px-5 py-4 shadow-sm border border-gray-100 font-bold text-gray-800"
+            >
+              <span className="text-2xl">{h.emoji}</span>
+              <span>{h.label}</span>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
