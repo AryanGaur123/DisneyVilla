@@ -12,7 +12,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="App min-h-screen" style={{ fontFamily: "'Nunito', sans-serif" }}>
+    <div className="App min-h-screen">
       <Navbar />
       <main>
         <section id="hero"><Hero /></section>

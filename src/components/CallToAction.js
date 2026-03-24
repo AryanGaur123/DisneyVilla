@@ -2,42 +2,25 @@ import React from 'react';
 
 const CallToAction = () => {
   return (
-    <section className="py-20 px-4 bg-[#FFF8F0]">
+    <section className="py-24 px-6 bg-gray-900">
       <div className="max-w-3xl mx-auto text-center">
-        <span className="text-5xl block mb-6">🏰✨</span>
-        <h2 className="text-3xl md:text-5xl font-black text-gray-900 mb-4 leading-tight">
-          Ready to Make<br />
-          <span className="text-[#FF6B6B]">Magical Memories?</span>
+        <p className="text-xs font-semibold tracking-[0.2em] uppercase text-white/40 mb-4">Ready to Book?</p>
+        <h2 className="font-display text-3xl md:text-5xl font-bold text-white leading-tight mb-5">
+          Your Orlando Escape<br />Starts Here
         </h2>
-        <p className="text-gray-500 font-semibold text-base md:text-lg mb-8 max-w-xl mx-auto">
-          Book our 5-bedroom luxury villa today and experience the perfect Orlando getaway — just minutes from the magic.
+        <p className="text-white/60 font-light text-base md:text-lg mb-10 max-w-xl mx-auto">
+          5-bedroom luxury villa with private pool, game room, and everything your family needs —
+          just 15 minutes from Disney World.
         </p>
-
-        {/* Stats row */}
-        <div className="flex flex-wrap justify-center gap-6 mb-10">
-          {[
-            { val: '5★', label: 'Rating' },
-            { val: '12', label: 'Guests' },
-            { val: '15min', label: 'to Disney' },
-            { val: '100%', label: 'Guests\' Fav' },
-          ].map((s) => (
-            <div key={s.label} className="text-center">
-              <div className="text-2xl font-black text-[#FF6B6B]">{s.val}</div>
-              <div className="text-xs font-bold text-gray-400 uppercase tracking-wide">{s.label}</div>
-            </div>
-          ))}
-        </div>
-
         <a
           href="https://www.airbnb.com/rooms/1363941275894637395"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-10 py-4 rounded-full bg-[#FF6B6B] text-white font-black text-lg hover:bg-[#e55555] transition shadow-xl hover:scale-105 duration-200"
+          className="inline-block px-10 py-4 rounded-full bg-white text-gray-900 text-sm font-bold hover:bg-gray-100 transition shadow-2xl tracking-wide"
         >
           Book on Airbnb
         </a>
-
-        <p className="text-gray-400 text-sm font-semibold mt-4">Free cancellation available · Instant booking</p>
+        <p className="text-white/30 text-xs font-medium mt-5">Free cancellation available · Instant booking</p>
       </div>
     </section>
   );
