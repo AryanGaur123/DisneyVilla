@@ -19,29 +19,24 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav
-      className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
-      style={{
-        background: scrolled ? 'rgba(255,251,245,0.97)' : 'rgba(255,251,245,0.85)',
-        backdropFilter: 'blur(16px)',
-        borderBottom: scrolled ? '1px solid rgba(15,23,42,0.08)' : 'none',
-        boxShadow: scrolled ? '0 1px 20px rgba(15,23,42,0.07)' : 'none',
-      }}
-    >
+    <nav className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
+         style={{
+           background: scrolled ? 'rgba(255,249,240,0.97)' : 'rgba(255,249,240,0.88)',
+           backdropFilter: 'blur(16px)',
+           borderBottom: scrolled ? '1px solid rgba(26,31,107,0.08)' : 'none',
+           boxShadow: scrolled ? '0 1px 24px rgba(26,31,107,0.07)' : 'none',
+         }}>
       <div className="max-w-6xl mx-auto px-5 py-3.5 flex items-center justify-between">
+
         {/* Logo */}
-        <a href="#hero" className="flex items-center gap-2.5 no-underline group">
-          <div className="w-9 h-9 rounded-xl flex items-center justify-center text-lg"
-               style={{ background: 'linear-gradient(135deg, #F5A623, #FF6B6B)' }}>
+        <a href="#hero" className="flex items-center gap-2.5 no-underline">
+          <div className="w-9 h-9 rounded-xl flex items-center justify-center text-lg flex-shrink-0"
+               style={{ background: 'linear-gradient(135deg, #1A1F6B, #7B3FBE)' }}>
             🏰
           </div>
-          <div>
-            <div className="font-display font-bold text-sm leading-tight" style={{ color: '#0F172A' }}>
-              Luxury Disney Villa
-            </div>
-            <div className="text-xs font-medium" style={{ color: '#94A3B8' }}>
-              Clermont · FL
-            </div>
+          <div className="leading-tight">
+            <div className="font-display font-bold text-sm" style={{ color: '#1A1F6B' }}>Luxury Disney Villa</div>
+            <div className="text-xs font-medium" style={{ color: '#9CA3AF' }}>Clermont · FL</div>
           </div>
         </a>
 
@@ -50,46 +45,42 @@ const Navbar = () => {
           {links.map(l => (
             <a key={l.href} href={l.href}
                className="text-sm font-semibold transition-colors duration-150"
-               style={{ color: '#475569' }}
-               onMouseEnter={e => e.target.style.color = '#0F172A'}
-               onMouseLeave={e => e.target.style.color = '#475569'}>
+               style={{ color: '#4B5563' }}
+               onMouseEnter={e => e.target.style.color = '#1A1F6B'}
+               onMouseLeave={e => e.target.style.color = '#4B5563'}>
               {l.label}
             </a>
           ))}
         </div>
 
         {/* Book btn */}
-        <div className="hidden md:flex items-center gap-3">
-          <a href="https://www.airbnb.com/rooms/1363941275894637395"
-             target="_blank" rel="noopener noreferrer"
-             className="px-5 py-2.5 text-sm font-bold text-white rounded-full transition-all duration-200 shadow-md hover:shadow-lg"
-             style={{ background: 'linear-gradient(135deg, #F5A623 0%, #FF6B6B 100%)' }}>
-            Book Now ✦
-          </a>
-        </div>
+        <a href="https://www.airbnb.com/rooms/1363941275894637395"
+           target="_blank" rel="noopener noreferrer"
+           className="hidden md:inline-flex items-center gap-1.5 px-5 py-2.5 text-sm font-bold text-white rounded-full transition-all duration-200 shadow-md hover:shadow-lg hover:scale-105 gradient-btn">
+          Book Now ✦
+        </a>
 
         {/* Mobile toggle */}
-        <button className="md:hidden p-1.5 rounded-lg" style={{ color: '#0F172A' }}
+        <button className="md:hidden p-1.5 rounded-lg" style={{ color: '#1A1F6B' }}
                 onClick={() => setOpen(!open)} aria-label="Menu">
           {open ? <FaTimes size={20} /> : <FaBars size={20} />}
         </button>
       </div>
 
-      {/* Mobile drawer */}
       {open && (
-        <div className="md:hidden px-5 pb-5 pt-2 space-y-1 border-t" style={{ borderColor: 'rgba(15,23,42,0.07)' }}>
+        <div className="md:hidden px-5 pb-5 pt-2 space-y-1"
+             style={{ borderTop: '1px solid rgba(26,31,107,0.07)' }}>
           {links.map(l => (
             <a key={l.href} href={l.href}
                className="block py-2.5 text-sm font-semibold"
-               style={{ color: '#475569' }}
+               style={{ color: '#4B5563' }}
                onClick={() => setOpen(false)}>
               {l.label}
             </a>
           ))}
           <a href="https://www.airbnb.com/rooms/1363941275894637395"
              target="_blank" rel="noopener noreferrer"
-             className="block text-center mt-3 py-3 text-sm font-bold text-white rounded-full"
-             style={{ background: 'linear-gradient(135deg, #F5A623 0%, #FF6B6B 100%)' }}
+             className="block text-center mt-3 py-3 text-sm font-bold text-white rounded-full gradient-btn"
              onClick={() => setOpen(false)}>
             Book Now on Airbnb ✦
           </a>

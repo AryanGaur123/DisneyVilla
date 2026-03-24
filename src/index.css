@@ -4,13 +4,23 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ─────────────────────────────────────────────────
+   Disney-inspired palette
+   Primary:  Midnight Blue   #1A1F6B  (Cinderella castle)
+   Accent:   Magic Gold      #F9C03A  (star / wand)
+   Pop:      Pixie Purple    #7B3FBE  (fairy godmother)
+   Bright:   Enchanted Teal  #00B4D8  (Genie / Ariel)
+   Warm:     Sunset Coral    #FF5F6D  (Mickey red / energy)
+   BG:       Fairy Cream     #FFF9F0
+───────────────────────────────────────────────── */
 :root {
-  --navy: #0F172A;
-  --cream: #FFFBF5;
-  --gold: #F5A623;
-  --coral: #FF6B6B;
-  --teal: #0EA5C9;
-  --light: #F8F4EE;
+  --disney-blue:   #1A1F6B;
+  --disney-gold:   #F9C03A;
+  --disney-purple: #7B3FBE;
+  --disney-teal:   #00B4D8;
+  --disney-coral:  #FF5F6D;
+  --fairy-cream:   #FFF9F0;
+  --soft-white:    #FFFFFF;
 }
 
 html { scroll-behavior: smooth; }
@@ -19,28 +29,48 @@ body {
   margin: 0;
   font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   -webkit-font-smoothing: antialiased;
-  background-color: #FFFBF5;
-  color: #0F172A;
+  background-color: var(--fairy-cream);
+  color: #111827;
 }
 
 section { scroll-margin-top: 72px; }
 
-.font-display {
-  font-family: 'Fraunces', Georgia, serif;
+.font-display { font-family: 'Fraunces', Georgia, serif; }
+
+/* ── Gradient helpers ───────────────────────────── */
+.gradient-disney {
+  background: linear-gradient(135deg, #F9C03A 0%, #FF5F6D 50%, #7B3FBE 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+.gradient-btn {
+  background: linear-gradient(135deg, #FF5F6D 0%, #7B3FBE 100%);
+}
+.gradient-btn-gold {
+  background: linear-gradient(135deg, #F9C03A 0%, #FF5F6D 100%);
 }
 
-/* ── Hero slideshow ─────────────────────────────── */
-.hero-slide-active  { opacity: 1; z-index: 1; }
-.hero-slide-inactive { opacity: 0; z-index: 0; }
+/* ── Section label ──────────────────────────────── */
+.section-label {
+  display: block;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--disney-purple);
+  margin-bottom: 8px;
+}
 
 /* ── Masonry grid ───────────────────────────────── */
 .photo-grid { columns: 2; column-gap: 8px; }
 @media (min-width: 640px)  { .photo-grid { columns: 3; column-gap: 10px; } }
 @media (min-width: 1024px) { .photo-grid { columns: 4; column-gap: 10px; } }
+
 .photo-grid-item {
   break-inside: avoid;
   margin-bottom: 8px;
-  border-radius: 12px;
+  border-radius: 14px;
   overflow: hidden;
   cursor: pointer;
   display: block;
@@ -48,69 +78,72 @@ section { scroll-margin-top: 72px; }
 }
 .photo-grid-item img {
   width: 100%; height: auto; display: block;
-  transition: transform 0.4s ease, filter 0.4s ease;
+  transition: transform 0.4s ease, filter 0.35s ease;
 }
-.photo-grid-item:hover img { transform: scale(1.04); filter: brightness(0.82); }
-.photo-grid-item .photo-overlay {
+.photo-grid-item:hover img { transform: scale(1.05); filter: brightness(0.78); }
+.photo-grid-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(to top, rgba(15,23,42,0.45) 0%, transparent 60%);
+  background: linear-gradient(to top, rgba(26,31,107,0.55) 0%, transparent 55%);
   opacity: 0; transition: opacity 0.3s ease;
-  display: flex; align-items: flex-end; padding: 12px;
+  display: flex; align-items: flex-end; padding: 10px 12px;
 }
-.photo-grid-item:hover .photo-overlay { opacity: 1; }
+.photo-grid-item:hover .photo-grid-overlay { opacity: 1; }
+
+/* ── "See more" fade mask ───────────────────────── */
+.gallery-mask {
+  position: relative;
+}
+.gallery-mask::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 160px;
+  background: linear-gradient(to bottom, transparent, var(--fairy-cream));
+  pointer-events: none;
+}
 
 /* ── Lightbox ───────────────────────────────────── */
 .lightbox-bg {
   position: fixed; inset: 0;
-  background: rgba(10,10,10,0.95);
+  background: rgba(8, 8, 24, 0.96);
   z-index: 9999;
   display: flex; align-items: center; justify-content: center;
 }
 .lightbox-img {
-  max-width: min(90vw, 1100px);
-  max-height: 88vh;
-  border-radius: 10px;
+  max-width: min(88vw, 1100px);
+  max-height: 86vh;
+  border-radius: 12px;
   object-fit: contain;
-  box-shadow: 0 30px 80px rgba(0,0,0,0.6);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.7);
 }
 .lb-btn {
-  position: absolute; background: rgba(255,255,255,0.1);
-  border: none; color: white; cursor: pointer;
+  position: absolute; background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.12);
+  color: white; cursor: pointer;
   display: flex; align-items: center; justify-content: center;
-  border-radius: 50%; transition: background 0.2s;
+  border-radius: 50%; transition: background 0.2s, transform 0.15s;
 }
-.lb-btn:hover { background: rgba(255,255,255,0.25); }
-.lb-close { top: 16px; right: 16px; width: 40px; height: 40px; font-size: 1.25rem; }
-.lb-prev  { left: 12px;  top: 50%; transform: translateY(-50%); width: 48px; height: 48px; font-size: 1.5rem; }
-.lb-next  { right: 12px; top: 50%; transform: translateY(-50%); width: 48px; height: 48px; font-size: 1.5rem; }
+.lb-btn:hover { background: rgba(249,192,58,0.25); transform: scale(1.1); }
+.lb-close { top: 18px; right: 18px; width: 38px; height: 38px; font-size: 1.1rem; }
+.lb-prev  { left: 14px; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; font-size: 1.6rem; }
+.lb-next  { right: 14px; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; font-size: 1.6rem; }
+.lb-prev:hover, .lb-next:hover { transform: translateY(-50%) scale(1.1); }
 
-/* ── Badge pill ─────────────────────────────────── */
-.badge {
-  display: inline-flex; align-items: center; gap: 6px;
-  font-size: 0.72rem; font-weight: 700;
-  letter-spacing: 0.06em; text-transform: uppercase;
-  padding: 5px 12px; border-radius: 100px;
+/* ── Card hover lift ────────────────────────────── */
+.card-lift {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
 }
-
-/* ── Section label ──────────────────────────────── */
-.section-label {
-  font-size: 0.7rem; font-weight: 700;
-  letter-spacing: 0.18em; text-transform: uppercase;
-  color: var(--gold); margin-bottom: 10px; display: block;
+.card-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(26,31,107,0.1);
 }
 
-/* ── Amenity card hover ─────────────────────────── */
-.amenity-card {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-.amenity-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(15,23,42,0.08);
-}
-
-/* ── Gradient text ──────────────────────────────── */
-.gradient-gold {
-  background: linear-gradient(135deg, #F5A623 0%, #FF6B6B 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  background-clip: text;
+/* ── Sparkle divider ────────────────────────────── */
+.sparkle-divider {
+  text-align: center;
+  font-size: 1.2rem;
+  letter-spacing: 0.6em;
+  opacity: 0.3;
+  margin: 0;
+  user-select: none;
 }

@@ -9,6 +9,8 @@ const slides = [
   '/images/hero.jpg',
 ];
 
+const chips = ['🛏 5 Bedrooms', '🛁 4.5 Baths', '👨‍👩‍👧‍👦 Sleeps 12', '🏊 Private Pool'];
+
 const Hero = () => {
   const [cur, setCur] = useState(0);
 
@@ -19,7 +21,6 @@ const Hero = () => {
 
   return (
     <div className="relative overflow-hidden" style={{ height: '100svh', minHeight: 620 }}>
-      {/* Slides */}
       {slides.map((src, i) => (
         <div key={i} className="absolute inset-0 transition-opacity duration-[2200ms] ease-in-out"
              style={{ opacity: i === cur ? 1 : 0, zIndex: i === cur ? 1 : 0 }}>
@@ -27,61 +28,61 @@ const Hero = () => {
         </div>
       ))}
 
-      {/* Multi-layer overlay: dark vignette + warm tint */}
-      <div className="absolute inset-0 z-10"
-           style={{ background: 'linear-gradient(160deg, rgba(10,14,26,0.55) 0%, rgba(10,14,26,0.3) 40%, rgba(15,10,5,0.72) 100%)' }} />
+      {/* Overlay — deep navy/purple vignette matching Disney palette */}
+      <div className="absolute inset-0 z-10" style={{
+        background: 'linear-gradient(170deg, rgba(26,31,107,0.62) 0%, rgba(26,31,107,0.25) 45%, rgba(10,8,30,0.78) 100%)'
+      }} />
 
       {/* Content */}
       <div className="relative z-20 h-full flex flex-col items-center justify-center px-5 text-center">
-        {/* Pill badge */}
-        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-6 text-xs font-bold tracking-widest uppercase"
-             style={{ background: 'rgba(245,166,35,0.18)', border: '1px solid rgba(245,166,35,0.45)', color: '#FCD34D', backdropFilter: 'blur(8px)' }}>
-          ⭐ 5-Star Airbnb · Guests' Favorite
+        {/* Badge */}
+        <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full mb-5 text-xs font-bold tracking-widest uppercase"
+             style={{ background: 'rgba(249,192,58,0.15)', border: '1px solid rgba(249,192,58,0.4)', color: '#F9C03A', backdropFilter: 'blur(8px)' }}>
+          ✦ 5-Star Airbnb · Guests' Favorite
         </div>
 
-        <h1 className="font-display font-bold text-white text-5xl md:text-7xl leading-[1.05] mb-5 max-w-4xl drop-shadow-2xl">
+        <h1 className="font-display font-bold text-white text-5xl md:text-7xl leading-[1.05] mb-4 max-w-4xl"
+            style={{ textShadow: '0 4px 30px rgba(10,8,30,0.5)' }}>
           Your Magical<br />
-          <span className="gradient-gold">Disney Escape</span><br />
+          <span className="gradient-disney">Disney Escape</span><br />
           Awaits
         </h1>
 
-        <p className="text-white/75 text-base md:text-xl font-medium mb-8 max-w-lg leading-relaxed">
-          Luxury 5-bedroom villa with private pool &amp; game room —<br className="hidden md:block" />
-          just 22 miles from Walt Disney World.
+        <p className="text-white/70 text-base md:text-lg font-medium mb-7 max-w-md">
+          Luxury villa · private pool · game room<br />
+          22 miles from Walt Disney World
         </p>
 
-        {/* Quick-stats row */}
-        <div className="flex flex-wrap justify-center gap-3 mb-9">
-          {['🛏 5 Bedrooms','🛁 4.5 Baths','👨‍👩‍👧‍👦 Sleeps 12','🏊 Private Pool','🏰 22 mi to Disney'].map(t => (
+        {/* Chips */}
+        <div className="flex flex-wrap justify-center gap-2 mb-8">
+          {chips.map(t => (
             <span key={t} className="text-xs font-semibold text-white/90 px-3.5 py-1.5 rounded-full"
-                  style={{ background: 'rgba(255,255,255,0.12)', border: '1px solid rgba(255,255,255,0.2)', backdropFilter: 'blur(6px)' }}>
+                  style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.18)', backdropFilter: 'blur(6px)' }}>
               {t}
             </span>
           ))}
         </div>
 
-        {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-3">
           <a href="https://www.airbnb.com/rooms/1363941275894637395"
              target="_blank" rel="noopener noreferrer"
-             className="px-8 py-4 rounded-full text-sm font-bold text-white shadow-2xl transition-all duration-200 hover:scale-105"
-             style={{ background: 'linear-gradient(135deg, #F5A623 0%, #FF6B6B 100%)' }}>
+             className="px-8 py-4 rounded-full text-sm font-bold text-white shadow-2xl transition-all duration-200 hover:scale-105 gradient-btn">
             Book on Airbnb →
           </a>
           <a href="#gallery"
-             className="px-8 py-4 rounded-full text-sm font-semibold text-white transition-all duration-200 hover:bg-white/20"
-             style={{ border: '1.5px solid rgba(255,255,255,0.4)' }}>
+             className="px-8 py-4 rounded-full text-sm font-semibold text-white transition hover:bg-white/15"
+             style={{ border: '1.5px solid rgba(255,255,255,0.35)' }}>
             View Photos
           </a>
         </div>
       </div>
 
-      {/* Slide dots */}
+      {/* Dots */}
       <div className="absolute bottom-7 left-0 right-0 z-20 flex justify-center gap-1.5">
         {slides.map((_, i) => (
-          <button key={i} onClick={() => setCur(i)} aria-label={`Slide ${i+1}`}
+          <button key={i} onClick={() => setCur(i)} aria-label={`Slide ${i + 1}`}
                   className="rounded-full transition-all duration-300"
-                  style={{ height: 3, width: i === cur ? 28 : 8, background: i === cur ? '#F5A623' : 'rgba(255,255,255,0.4)' }} />
+                  style={{ height: 3, width: i === cur ? 28 : 8, background: i === cur ? '#F9C03A' : 'rgba(255,255,255,0.35)' }} />
         ))}
       </div>
     </div>

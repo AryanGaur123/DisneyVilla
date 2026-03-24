@@ -31,8 +31,13 @@ const photos = [
   { src: '/images/AIRBNB PICS/fef878b6-7ff1-4aad-a230-b543503ca6f8.png', alt: 'Patio' },
 ];
 
+const PREVIEW = 8;
+
 const Gallery = () => {
+  const [expanded, setExpanded] = useState(false);
   const [lb, setLb] = useState(null);
+
+  const shown = expanded ? photos : photos.slice(0, PREVIEW);
 
   const close = useCallback(() => setLb(null), []);
   const prev  = useCallback(() => setLb(i => (i - 1 + photos.length) % photos.length), []);
@@ -41,44 +46,59 @@ const Gallery = () => {
   useEffect(() => {
     if (lb === null) return;
     const fn = e => {
-      if (e.key === 'Escape')    close();
-      if (e.key === 'ArrowLeft') prev();
+      if (e.key === 'Escape')     close();
+      if (e.key === 'ArrowLeft')  prev();
       if (e.key === 'ArrowRight') next();
     };
     window.addEventListener('keydown', fn);
     return () => window.removeEventListener('keydown', fn);
   }, [lb, close, prev, next]);
 
-  // lock body scroll when lightbox is open
   useEffect(() => {
     document.body.style.overflow = lb !== null ? 'hidden' : '';
     return () => { document.body.style.overflow = ''; };
   }, [lb]);
 
   return (
-    <section id="gallery" className="py-20 px-5" style={{ background: '#FFFBF5' }}>
+    <section id="gallery" className="py-16 px-5" style={{ background: '#FFF9F0' }}>
       <div className="max-w-6xl mx-auto">
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
+
+        <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-3 mb-8">
           <div>
             <span className="section-label">Take a Look Inside</span>
-            <h2 className="font-display font-bold text-4xl md:text-5xl" style={{ color: '#0F172A' }}>
+            <h2 className="font-display font-bold text-3xl md:text-4xl" style={{ color: '#111827' }}>
               Property Gallery
             </h2>
           </div>
-          <span className="text-sm font-medium" style={{ color: '#94A3B8' }}>
+          <span className="text-sm font-medium" style={{ color: '#9CA3AF' }}>
             {photos.length} photos · click to enlarge
           </span>
         </div>
 
-        <div className="photo-grid">
-          {photos.map((p, i) => (
-            <div key={i} className="photo-grid-item" onClick={() => setLb(i)}>
-              <img src={p.src} alt={p.alt} loading="lazy" />
-              <div className="photo-overlay">
-                <span className="text-white text-xs font-semibold">{p.alt}</span>
+        {/* Grid with optional fade mask */}
+        <div className={!expanded ? 'gallery-mask' : ''} style={!expanded ? { maxHeight: 820, overflow: 'hidden' } : {}}>
+          <div className="photo-grid">
+            {shown.map((p, i) => (
+              <div key={i} className="photo-grid-item" onClick={() => setLb(i)}>
+                <img src={p.src} alt={p.alt} loading="lazy" />
+                <div className="photo-grid-overlay">
+                  <span className="text-white text-xs font-semibold">{p.alt}</span>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+
+        {/* Expand / collapse */}
+        <div className="text-center mt-6">
+          <button
+            onClick={() => setExpanded(e => !e)}
+            className="inline-flex items-center gap-2 px-7 py-3 rounded-full text-sm font-bold text-white transition-all duration-200 hover:scale-105 shadow-lg gradient-btn"
+          >
+            {expanded
+              ? '▲ Show Less'
+              : `✦ See All ${photos.length} Photos`}
+          </button>
         </div>
       </div>
 
@@ -86,16 +106,12 @@ const Gallery = () => {
       {lb !== null && (
         <div className="lightbox-bg" onClick={close}>
           <button className="lb-btn lb-close" onClick={close} aria-label="Close">✕</button>
-          <button className="lb-btn lb-prev" onClick={e => { e.stopPropagation(); prev(); }} aria-label="Previous">‹</button>
-          <img
-            className="lightbox-img"
-            src={photos[lb].src}
-            alt={photos[lb].alt}
-            onClick={e => e.stopPropagation()}
-          />
+          <button className="lb-btn lb-prev" onClick={e => { e.stopPropagation(); prev(); }} aria-label="Prev">‹</button>
+          <img className="lightbox-img" src={photos[lb].src} alt={photos[lb].alt}
+               onClick={e => e.stopPropagation()} />
           <button className="lb-btn lb-next" onClick={e => { e.stopPropagation(); next(); }} aria-label="Next">›</button>
           <div style={{ position: 'absolute', bottom: 16, left: 0, right: 0, textAlign: 'center',
-                        color: 'rgba(255,255,255,0.4)', fontSize: '0.75rem', fontWeight: 600, letterSpacing: '0.1em' }}>
+                        color: 'rgba(255,255,255,0.35)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em' }}>
             {lb + 1} / {photos.length}
           </div>
         </div>
