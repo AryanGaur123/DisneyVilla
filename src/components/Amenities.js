@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FaSwimmingPool, FaUtensils, FaWifi, FaParking, FaTshirt, FaMapMarkerAlt, FaSnowflake, FaGamepad, FaTv, FaLock, FaBed, FaDumbbell } from 'react-icons/fa';
+import { FaSwimmingPool, FaUtensils, FaWifi, FaParking, FaTshirt, FaMapMarkerAlt, FaSnowflake, FaGamepad, FaTv, FaLock, FaBed } from 'react-icons/fa';
 
 const amenities = [
   { icon: FaSwimmingPool, name: 'Private Pool',     color: '#00B4D8', bg: '#F0FAFF' },
@@ -14,7 +14,6 @@ const amenities = [
   { icon: FaSnowflake,    name: 'A/C & Heating',    color: '#00B4D8', bg: '#F0FAFF' },
   { icon: FaTv,           name: 'Smart TVs',        color: '#1565C0', bg: '#E3F2FD' },
   { icon: FaLock,         name: 'Secure Access',    color: '#10B981', bg: '#F0FDF4' },
-  { icon: FaDumbbell,     name: 'Fitness Center',   color: '#1E88E5', bg: '#E3F2FD' },
 ];
 
 const VISIBLE = 6;
