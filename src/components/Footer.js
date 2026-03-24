@@ -16,7 +16,7 @@ const Footer = () => {
               A 5-star luxury retreat just 15 minutes from Disney World. Perfect for families, groups, and celebrations.
             </p>
             <div className="flex gap-3">
-              <a href="#" className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#FF6B6B] transition" aria-label="Instagram">
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#FF6B6B] transition" aria-label="Instagram">
                 <FaInstagram size={16} />
               </a>
               <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-9 h-9 bg-gray-800 rounded-full flex items-center justify-center hover:bg-[#4ECDC4] transition" aria-label="Facebook">
@@ -53,6 +53,7 @@ const Footer = () => {
               <li><a href="#amenities" className="hover:text-[#4ECDC4] transition">Amenities</a></li>
               <li><a href="#gallery" className="hover:text-[#4ECDC4] transition">Gallery</a></li>
               <li><a href="#reviews" className="hover:text-[#4ECDC4] transition">Reviews</a></li>
+              <li><a href="mailto:luxurydisneyvilla@gmail.com" className="hover:text-[#4ECDC4] transition">Contact</a></li>
             </ul>
           </div>
         </div>
