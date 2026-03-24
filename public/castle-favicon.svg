@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="castleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#6366f1;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#4338ca;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#312e81;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="skyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#1e1b4b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#312e81;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="256" cy="256" r="256" fill="url(#skyGrad)"/>
+
+  <!-- Stars -->
+  <circle cx="100" cy="80" r="3" fill="#fde68a" opacity="0.9"/>
+  <circle cx="400" cy="100" r="2.5" fill="#fde68a" opacity="0.8"/>
+  <circle cx="150" cy="130" r="2" fill="#fde68a" opacity="0.7"/>
+  <circle cx="370" cy="60" r="2" fill="#fde68a" opacity="0.85"/>
+  <circle cx="300" cy="90" r="2.5" fill="#fde68a" opacity="0.75"/>
+  <circle cx="80" cy="150" r="2" fill="#fde68a" opacity="0.6"/>
+  <circle cx="430" cy="160" r="1.5" fill="#fde68a" opacity="0.7"/>
+  <circle cx="200" cy="70" r="2" fill="#fde68a" opacity="0.8"/>
+
+  <!-- Castle silhouette -->
+  <g fill="url(#castleGrad)">
+
+    <!-- Main base/foundation -->
+    <rect x="100" y="380" width="312" height="50" rx="4"/>
+
+    <!-- Central building body -->
+    <rect x="140" y="280" width="232" height="100"/>
+
+    <!-- Left wing -->
+    <rect x="100" y="300" width="60" height="80"/>
+
+    <!-- Right wing -->
+    <rect x="352" y="300" width="60" height="80"/>
+
+    <!-- Central tall tower -->
+    <rect x="230" y="120" width="52" height="160"/>
+
+    <!-- Central tower spire -->
+    <polygon points="256,55 225,140 287,140"/>
+
+    <!-- Central tower turret top -->
+    <rect x="238" y="115" width="36" height="15" rx="2"/>
+
+    <!-- Central tower flag pole -->
+    <line x1="256" y1="55" x2="256" y2="30" stroke="#fde68a" stroke-width="3"/>
+    <!-- Flag -->
+    <polygon points="256,30 280,38 256,46" fill="#fde68a"/>
+
+    <!-- Left tall tower -->
+    <rect x="155" y="185" width="38" height="95"/>
+    <!-- Left tower top -->
+    <polygon points="174,130 150,195 198,195"/>
+    <rect x="160" y="180" width="28" height="15" rx="2"/>
+
+    <!-- Right tall tower -->
+    <rect x="319" y="185" width="38" height="95"/>
+    <!-- Right tower top -->
+    <polygon points="338,130 314,195 362,195"/>
+    <rect x="324" y="180" width="28" height="15" rx="2"/>
+
+    <!-- Far left turret -->
+    <rect x="100" y="240" width="30" height="60"/>
+    <polygon points="115,200 95,248 135,248"/>
+    <rect x="103" y="235" width="24" height="12" rx="2"/>
+
+    <!-- Far right turret -->
+    <rect x="382" y="240" width="30" height="60"/>
+    <polygon points="397,200 377,248 417,248"/>
+    <rect x="385" y="235" width="24" height="12" rx="2"/>
+
+    <!-- Extra small turret left -->
+    <rect x="125" y="260" width="22" height="40"/>
+    <polygon points="136,230 120,265 152,265"/>
+
+    <!-- Extra small turret right -->
+    <rect x="365" y="260" width="22" height="40"/>
+    <polygon points="376,230 360,265 392,265"/>
+  </g>
+
+  <!-- Castle details - windows and door -->
+  <g fill="#1e1b4b">
+    <!-- Main entrance arch -->
+    <path d="M240,380 L240,345 Q256,325 272,345 L272,380 Z"/>
+
+    <!-- Central tower windows -->
+    <ellipse cx="256" cy="170" rx="8" ry="12"/>
+    <ellipse cx="256" cy="210" rx="8" ry="12"/>
+    <ellipse cx="256" cy="250" rx="8" ry="12"/>
+
+    <!-- Left tower windows -->
+    <ellipse cx="174" cy="220" rx="6" ry="10"/>
+    <ellipse cx="174" cy="250" rx="6" ry="10"/>
+
+    <!-- Right tower windows -->
+    <ellipse cx="338" cy="220" rx="6" ry="10"/>
+    <ellipse cx="338" cy="250" rx="6" ry="10"/>
+
+    <!-- Lower level windows -->
+    <ellipse cx="180" cy="320" rx="8" ry="12"/>
+    <ellipse cx="215" cy="320" rx="8" ry="12"/>
+    <ellipse cx="297" cy="320" rx="8" ry="12"/>
+    <ellipse cx="332" cy="320" rx="8" ry="12"/>
+
+    <!-- Far turret windows -->
+    <ellipse cx="115" cy="275" rx="5" ry="8"/>
+    <ellipse cx="397" cy="275" rx="5" ry="8"/>
+  </g>
+
+  <!-- Window glow -->
+  <g fill="#fde68a" opacity="0.4">
+    <ellipse cx="256" cy="170" rx="5" ry="8"/>
+    <ellipse cx="256" cy="210" rx="5" ry="8"/>
+    <ellipse cx="256" cy="250" rx="5" ry="8"/>
+    <ellipse cx="174" cy="220" rx="4" ry="7"/>
+    <ellipse cx="174" cy="250" rx="4" ry="7"/>
+    <ellipse cx="338" cy="220" rx="4" ry="7"/>
+    <ellipse cx="338" cy="250" rx="4" ry="7"/>
+    <ellipse cx="180" cy="320" rx="5" ry="8"/>
+    <ellipse cx="215" cy="320" rx="5" ry="8"/>
+    <ellipse cx="297" cy="320" rx="5" ry="8"/>
+    <ellipse cx="332" cy="320" rx="5" ry="8"/>
+  </g>
+
+  <!-- Sparkle/magic dust arc over castle -->
+  <g fill="#fde68a" opacity="0.6">
+    <circle cx="180" cy="100" r="2"/>
+    <circle cx="200" cy="85" r="2.5"/>
+    <circle cx="220" cy="75" r="3"/>
+    <circle cx="240" cy="70" r="2.5"/>
+    <circle cx="275" cy="70" r="2.5"/>
+    <circle cx="295" cy="75" r="3"/>
+    <circle cx="315" cy="85" r="2.5"/>
+    <circle cx="335" cy="100" r="2"/>
+  </g>
+</svg>
